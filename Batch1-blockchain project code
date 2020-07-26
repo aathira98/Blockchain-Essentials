@@ -1,0 +1,35 @@
+Test deployment of the smart contract can be found at 0xEEf7D259556762E52B03bF0712E76011Cc1735dF in 
+https://ropsten.etherscan.io/address/0xeef7d259556762e52b03bf0712e76011cc1735df
+
+program performed in http://remix.ethereum.org/
+
+pragma solidity ^0.4.17 < 0.6.12; 
+
+contract Reportcard{
+    
+    string public Name;
+    string public rollno ;
+    string public Batch;
+    uint public marksinpython;
+     uint public marksindatabase;
+      uint public marksinjava;
+       uint public marksinnetworking;
+    string public status;
+    
+    function Reportcard(string newName, string Newrollno, string newBatch, uint newmarksinpython, uint newmarksindatabase, uint newmarksinjava, uint newmarksinnetworking, string newstatus) public{
+        
+        Name = newName;
+        rollno = Newrollno;
+        Batch = newBatch;
+        marksinpython = newmarksinpython;
+        marksindatabase = newmarksindatabase;
+        marksinjava = newmarksinjava;
+        marksinnetworking= newmarksinnetworking;
+        status = newstatus;
+        
+    }
+    function getReportCurrentDetails() public view returns(string,string,string,uint,uint,uint,uint,string){
+        return(Name, rollno, Batch, marksinpython, marksindatabase, marksinjava, marksinnetworking, status);
+    }
+}
+
